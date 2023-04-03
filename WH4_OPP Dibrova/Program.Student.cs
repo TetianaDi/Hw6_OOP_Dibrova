@@ -1,19 +1,21 @@
-﻿namespace WH4_OPP_Dibrova
+﻿using static WH4_OPP_Dibrova.Program;
+
+namespace WH4_OPP_Dibrova
 {
     internal partial class Program
     {
 
-        public class Student
+        public class Student : University
         {         
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public int Age { get; set; }
             public string City { get; set; }
-
+                      
             public CoursesAttended Kurs { get; set; }
 
 
-            public Student(string name, string surname, int age, string city)
+            public Student(string name, string surname, int age, string city, string university, string cathedra) : base(university, cathedra)
             {
                 FirstName = name;
                 LastName = surname;
@@ -27,7 +29,7 @@
             //Describe the following actions: Print (output basic information).
             public void Print()
             {
-                Console.WriteLine($"First name {FirstName}, Last name {LastName}, Age {Age}, City {City}");
+                Console.WriteLine($"Student {FirstName} {LastName}, Age {Age}, City {City} in University {UnivName} and Cathedra {Сathedra}");
             }
 
         }
